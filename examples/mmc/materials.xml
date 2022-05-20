@@ -1,0 +1,25 @@
+<materials>
+  <plastic_model type="SmallStrainRateIndependentPlasticity">
+    <elastic type="IsotropicLinearElasticModel">
+      <m1>100000.0</m1>
+      <m1_type>youngs</m1_type>
+      <m2>0.3</m2>
+      <m2_type>poissons</m2_type>
+    </elastic>
+    <flow type="RateIndependentAssociativeFlow">
+      <surface type="IsoJ2"/>
+      <hardening type="LinearIsotropicHardeningRule">
+        <s0>100.0</s0>
+        <K>1000.0</K>
+      </hardening>
+    </flow>
+  </plastic_model>
+  <elastic_model type="SmallStrainElasticity">
+    <elastic type="IsotropicLinearElasticModel">
+      <m1>1000000.0</m1>
+      <m1_type>youngs</m1_type>
+      <m2>0.25</m2>
+      <m2_type>poissons</m2_type>
+    </elastic>
+  </elastic_model>
+</materials>
