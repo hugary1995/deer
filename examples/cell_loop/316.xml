@@ -1,0 +1,49 @@
+<materials>
+  <316 type="SingleCrystalModel">
+    <kinematics type="StandardKinematicModel">
+      <emodel type="IsotropicLinearElasticModel">
+        <m1_type>youngs</m1_type>
+        <m1>101300</m1>
+        <m2_type>poissons</m2_type>
+        <m2>0.39</m2>
+      </emodel>
+      <imodel type="AsaroInelasticity">
+        <rule type="PowerLawSlipRule">
+          <resistance type="VoceSlipHardening">
+            <tau_sat>11.467</tau_sat>
+            <b>56.68</b>
+            <tau_0>37.93</tau_0>
+          </resistance>
+          <gamma0>9.55470706737e-08</gamma0>
+          <n>12</n>
+        </rule>
+      </imodel>
+    </kinematics>
+    <lattice type="CubicLattice">
+      <a>1.0</a>
+      <slip_systems>
+        1 1 0 ; 1 1 1
+      </slip_systems>
+    </lattice>
+    <initial_rotation type="CrystalOrientation">
+      <angles>0 0 0 </angles>
+      <angle_type>degrees</angle_type>
+      <angle_convention>kocks</angle_convention>
+    </initial_rotation>
+    <alpha type="ConstantInterpolate">
+      <v>0</v>
+    </alpha>
+    <update_rotation>true</update_rotation>
+    <rtol>1e-08</rtol>
+    <atol>1e-06</atol>
+    <miter>30</miter>
+    <verbose>false</verbose>
+    <linesearch>true</linesearch>
+    <max_divide>6</max_divide>
+    <postprocessors/>
+    <elastic_predictor>false</elastic_predictor>
+    <fallback_elastic_predictor>true</fallback_elastic_predictor>
+    <force_divide>0</force_divide>
+    <elastic_predictor_first_step>false</elastic_predictor_first_step>
+  </316>
+</materials>
